@@ -6,6 +6,9 @@ namespace JustCommunication\TinkoffAcquiringAPIClient\API;
 
 class GetQRRequest extends AbstractRequest
 {
+    const HTTP_METHOD = 'POST';
+    const URI = 'GetQR';
+    const RESPONSE_CLASS = GetQRResponse::class;
     const DATA_TYPE_PAYLOAD = 'PAYLOAD';
     const DATA_TYPE_IMAGE = 'IMAGE';
 
@@ -23,11 +26,6 @@ class GetQRRequest extends AbstractRequest
     {
         $this->paymentId = $paymentId;
         $this->dataType = $dataType;
-    }
-
-    public function getMethodName(): string
-    {
-        return 'GetQR';
     }
 
     public function buildRequestData(): array
@@ -82,5 +80,12 @@ class GetQRRequest extends AbstractRequest
     {
         $this->dataType = $dataType;
         return $this;
+    }
+
+    public function createHttpClientParams()
+    {
+        return [
+            'json' => $this->buildRequestData()
+        ];
     }
 }
