@@ -43,8 +43,6 @@ class GetQrResponse extends AbstractResponse
 
     public function __construct(array $data)
     {
-        parent::__construct($data);
-
         $this->orderId = $data['OrderId'] ?? null;
         $this->paymentId = $data['PaymentId'] ?? null;
         $this->data = $data['Data'] ?? null;
