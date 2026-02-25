@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace JustCommunication\TinkoffAcquiringAPIClient\API;
 
-class GetQRResponse extends AbstractResponse
+class GetQrResponse extends AbstractResponse
 {
     /**
      * @var string|null ID заказа

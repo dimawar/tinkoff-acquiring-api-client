@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace JustCommunication\TinkoffAcquiringAPIClient\API;
 
-class GetQRRequest extends AbstractRequest
+class GetQrRequest extends AbstractRequest
 {
     const HTTP_METHOD = 'POST';
-    const URI = 'GetQR';
-    const RESPONSE_CLASS = GetQRResponse::class;
+    const URI = 'GetQr';
+    const RESPONSE_CLASS = GetQrResponse::class;
     const DATA_TYPE_PAYLOAD = 'PAYLOAD';
     const DATA_TYPE_IMAGE = 'IMAGE';
 
