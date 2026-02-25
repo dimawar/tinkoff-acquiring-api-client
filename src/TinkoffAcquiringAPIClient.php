@@ -16,7 +16,7 @@ use Psr\Log\NullLogger;
  * @method API\GetStateResponse sendGetStateRequest(API\GetStateRequest $request)
  * @method API\ConfirmResponse sendConfirmRequest(API\ConfirmRequest $request)
  * @method API\CancelResponse sendCancelRequest(API\CancelRequest $request)
- * @method API\GetQRResponse sendQrRequest(API\GetQRRequest $request)
+ * @method API\GetQRResponse sendGetQQRequest(API\GetQRRequest $request)
  */
 class TinkoffAcquiringAPIClient implements LoggerAwareInterface
 {
