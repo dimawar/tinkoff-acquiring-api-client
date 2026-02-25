@@ -13,7 +13,7 @@ class GetQrRequest extends AbstractRequest
     const DATA_TYPE_IMAGE = 'IMAGE';
 
     /**
-     * @var string|null ID платежа в системе Тинькофф
+     * @var int ID платежа в системе Тинькофф
      */
     private $paymentId;
 
@@ -22,7 +22,7 @@ class GetQrRequest extends AbstractRequest
      */
     private $dataType = self::DATA_TYPE_PAYLOAD;
 
-    public function __construct(string $paymentId, string $dataType = self::DATA_TYPE_PAYLOAD)
+    public function __construct(int $paymentId, string $dataType = self::DATA_TYPE_PAYLOAD)
     {
         $this->paymentId = $paymentId;
         $this->dataType = $dataType;
@@ -31,8 +31,8 @@ class GetQrRequest extends AbstractRequest
     public function buildRequestData(): array
     {
         $data = [
-            'PaymentId' => $this->paymentId,
-            'DataType' => $this->dataType
+            'DataType' => $this->dataType,
+            'PaymentId' => $this->paymentId
         ];
 
         return $data;
@@ -41,9 +41,9 @@ class GetQrRequest extends AbstractRequest
     /**
      * Get payment ID
      *
-     * @return string|null
+     * @return int
      */
-    public function getPaymentId(): ?string
+    public function getPaymentId(): int
     {
         return $this->paymentId;
     }
@@ -51,10 +51,10 @@ class GetQrRequest extends AbstractRequest
     /**
      * Set payment ID
      *
-     * @param string $paymentId
+     * @param int $paymentId
      * @return self
      */
-    public function setPaymentId(string $paymentId): self
+    public function setPaymentId(int $paymentId): self
     {
         $this->paymentId = $paymentId;
         return $this;
@@ -82,7 +82,7 @@ class GetQrRequest extends AbstractRequest
         return $this;
     }
 
-    public function createHttpClientParams()
+    public function createHttpClientParams(): array
     {
         return [
             'json' => $this->buildRequestData()

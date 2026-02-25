@@ -12,7 +12,7 @@ class GetQrResponse extends AbstractResponse
     private $orderId;
 
     /**
-     * @var string|null ID платежа
+     * @var int|null ID платежа
      */
     private $paymentId;
 
@@ -76,9 +76,9 @@ class GetQrResponse extends AbstractResponse
     /**
      * Получить ID платежа
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getPaymentId(): ?string
+    public function getPaymentId(): ?int
     {
         return $this->paymentId;
     }
