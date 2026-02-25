@@ -12,11 +12,11 @@ use Psr\Log\NullLogger;
 
 /**
  * Class TinkoffAcquiringAPIClient
- *
  * @method API\InitResponse sendInitRequest(API\InitRequest $request)
  * @method API\GetStateResponse sendGetStateRequest(API\GetStateRequest $request)
  * @method API\ConfirmResponse sendConfirmRequest(API\ConfirmRequest $request)
  * @method API\CancelResponse sendCancelRequest(API\CancelRequest $request)
+ * @method API\GetQRResponse sendQrRequest(API\GetQRRequest $request)
  */
 class TinkoffAcquiringAPIClient implements LoggerAwareInterface
 {
