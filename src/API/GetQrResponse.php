@@ -22,6 +22,11 @@ class GetQrResponse extends AbstractResponse
     private $data;
 
     /**
+     * @var bool|null успех
+     */
+    private $success;
+
+    /**
      * @var string|null Код ошибки
      */
     private $errorCode;
@@ -46,6 +51,7 @@ class GetQrResponse extends AbstractResponse
         $this->orderId = $data['OrderId'] ?? null;
         $this->paymentId = $data['PaymentId'] ?? null;
         $this->data = $data['Data'] ?? null;
+        $this->success = $data['Success'] ?? null;
         $this->errorCode = $data['ErrorCode'] ?? null;
         $this->message = $data['Message'] ?? null;
         $this->details = $data['Details'] ?? null;
@@ -93,6 +99,16 @@ class GetQrResponse extends AbstractResponse
     public function getData(): ?string
     {
         return $this->data;
+    }
+
+    /**
+     * Получить успех
+     *
+     * @return bool|null
+     */
+    public function getSuccess(): ?bool
+    {
+        return $this->success;
     }
 
     /**
